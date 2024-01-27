@@ -8,6 +8,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] Transform[] pathWaypoints;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject UItext;
     
     const string charSpeed = "Speed";
 
@@ -29,9 +30,11 @@ public class NavigationScript : MonoBehaviour
             if (waypointIndex >= pathWaypoints.Length)
             {
                 waypointIndex = 0;
+                UItext.SetActive(true);
+
             }
 
             navMeshAgent.SetDestination(pathWaypoints[waypointIndex].position);
-        }
+        }       
     }
 }
