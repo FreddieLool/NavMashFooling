@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class NavigationScript : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] Transform[] pathWaypoints;
     [SerializeField] Animator animator;
     [SerializeField] GameObject UItext;
-    
+
     const string charSpeed = "Speed";
 
     int waypointIndex = 0;
