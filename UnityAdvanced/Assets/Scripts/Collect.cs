@@ -4,29 +4,19 @@ using UnityEngine.Events;
 
 public class Collect : MonoBehaviour
 {
-    int balls = 0;
-    [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private AudioSource collectSfx;
-    public UnityEvent collect;
+
+    public UnityEvent Collection;
+
+
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Ball"))
+        if (collision.gameObject.tag == "Ball")
         {
-            SFX();
-            AddToScore();
+            Collection.Invoke();
             Destroy(collision.gameObject);
         }
     }
 
-    public void SFX()
-    {
-        collectSfx.Play();
-    }
 
-    public void AddToScore()
-    {
-        balls++;
-        scoreText.text = ("Balls: " + balls);
-    }
 }
 
