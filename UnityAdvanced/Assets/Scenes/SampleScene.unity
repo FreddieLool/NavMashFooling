@@ -387,12 +387,46 @@ MonoBehaviour:
   - {fileID: 565166273}
   animator: {fileID: 188034305}
   UItext: {fileID: 1548871458}
+  classAnimator: {fileID: 0}
+  aniCo: {fileID: 0}
+  speedChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &188034305 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 9e1576339bf8cfb4ebec4ff13a2ecf43,
     type: 3}
   m_PrefabInstance: {fileID: 881985344}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &188034306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188034302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e40415715984674895dbd5fa2cd504c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 188034306}
+        m_TargetAssemblyTypeName: aniController, Assembly-CSharp
+        m_MethodName: ChangeSpeed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  animator: {fileID: 188034305}
+  script: {fileID: 188034304}
 --- !u!1 &277306282 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7397137975640516144, guid: 474c64e7b6302304bb04e77a9e8809dc,
@@ -1166,6 +1200,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 188034303}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e1576339bf8cfb4ebec4ff13a2ecf43,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 188034306}
   m_SourcePrefab: {fileID: 100100000, guid: 9e1576339bf8cfb4ebec4ff13a2ecf43, type: 3}
 --- !u!1 &885026491
 GameObject:
@@ -1852,6 +1890,11 @@ MonoBehaviour:
   - {fileID: 565166273}
   animator: {fileID: 1198289909}
   UItext: {fileID: 1548871458}
+  classAnimator: {fileID: 0}
+  aniCo: {fileID: 0}
+  speedChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &1198289909
 Animator:
   serializedVersion: 5
