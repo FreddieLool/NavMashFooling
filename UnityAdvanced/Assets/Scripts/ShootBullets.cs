@@ -35,6 +35,7 @@ public class ShootBullets : MonoBehaviour
         while (true) { 
         Bullet instadBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
             instadBullet.onBulletCollided.AddListener(BulletCollided);
+            Bullet.transform.position = transform.position;
         yield return new WaitForSeconds(5);
         }
     }

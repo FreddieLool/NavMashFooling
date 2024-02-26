@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -10,7 +11,8 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] Transform[] pathWaypoints;
     [SerializeField] Animator animator;
     [SerializeField] GameObject UItext;
-
+    [SerializeField] UnitMovement m_UnitMovement;
+        
     const string charSpeed = "Speed";
 
     int waypointIndex = 0;
@@ -24,7 +26,9 @@ public class NavigationScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        navMeshAgent.speed = m_UnitMovement.GetCharacterSpeed();
         animator.SetFloat(charSpeed, navMeshAgent.velocity.magnitude);
+        
         if (!navMeshAgent.isStopped && navMeshAgent.remainingDistance <= 0.1f)
         {
             waypointIndex++;
