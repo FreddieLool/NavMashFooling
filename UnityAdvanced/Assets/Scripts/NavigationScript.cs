@@ -9,12 +9,12 @@ public class NavigationScript : MonoBehaviour
     [SerializeField] NavMeshAgent navMeshAgent;
     [SerializeField] Transform[] pathWaypoints;
     [SerializeField] Animator animator;
-    [SerializeField] GameObject UItext;
     [SerializeField] Animator classAnimator;
     [SerializeField] aniController aniCo;
+    public UnityEvent onFinishedTrack;
+    public UnityEvent<float> speedChange;
     const string charSpeed = "Speed";
 
-    public UnityEvent<float> speedChange;
     int waypointIndex = 0;
 
     // Start is called before the first frame update
@@ -36,9 +36,9 @@ public class NavigationScript : MonoBehaviour
             waypointIndex++;
             if (waypointIndex >= pathWaypoints.Length)
             {
-                waypointIndex = 0;
-                UItext.SetActive(true);
-
+                onFinishedTrack.Invoke();
+                animator.SetBool("IsFinished", true);
+                //waypointIndex = 0;
             }
 
             navMeshAgent.SetDestination(pathWaypoints[waypointIndex].position);
